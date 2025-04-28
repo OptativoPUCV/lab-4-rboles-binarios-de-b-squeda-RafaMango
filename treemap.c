@@ -36,28 +36,35 @@ TreeNode * createTreeNode(void* key, void * value) {
     return new;
 }
 
-TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
+TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2))
+{
+    TreeMap *map = (TreeMap*)malloc(sizeof(TreeMap));
+    map->root = NULL;
+    map->current = NULL;
+    map->lower_than = lower_than; //quizas sea mejor poner new en vez de map
+    return map;
+}
 
-    //new->lower_than = lower_than;
+
+void insertTreeMap(TreeMap * tree, void* key, void * value)
+{
+
+}
+
+TreeNode * minimum(TreeNode * x)
+{
+
     return NULL;
 }
 
 
-void insertTreeMap(TreeMap * tree, void* key, void * value) {
+void removeNode(TreeMap * tree, TreeNode* node)
+{
 
 }
 
-TreeNode * minimum(TreeNode * x){
-
-    return NULL;
-}
-
-
-void removeNode(TreeMap * tree, TreeNode* node) {
-
-}
-
-void eraseTreeMap(TreeMap * tree, void* key){
+void eraseTreeMap(TreeMap * tree, void* key)
+{
     if (tree == NULL || tree->root == NULL) return;
 
     if (searchTreeMap(tree, key) == NULL) return;
@@ -69,19 +76,23 @@ void eraseTreeMap(TreeMap * tree, void* key){
 
 
 
-Pair * searchTreeMap(TreeMap * tree, void* key) {
+Pair * searchTreeMap(TreeMap * tree, void* key)
+{
     return NULL;
 }
 
 
-Pair * upperBound(TreeMap * tree, void* key) {
+Pair * upperBound(TreeMap * tree, void* key)
+{
     return NULL;
 }
 
-Pair * firstTreeMap(TreeMap * tree) {
+Pair * firstTreeMap(TreeMap * tree)
+{
     return NULL;
 }
 
-Pair * nextTreeMap(TreeMap * tree) {
+Pair * nextTreeMap(TreeMap * tree)
+{
     return NULL;
 }
