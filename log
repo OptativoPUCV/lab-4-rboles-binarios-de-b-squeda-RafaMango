@@ -18,3 +18,9 @@ treemap.c:58:6: note: declared here
       ^~~~~~~~~~~~~
 cc1.exe: all warnings being treated as errors
 24981c0
+ma., 29 de abr. de 2025 12:46:33: 
+ treemap.c | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+ tests:  11|6
+total_score: 15/70
+e109af7
