@@ -43,3 +43,17 @@ treemap.c:61:15: error: variable 'padre' set but not used [-Werror=unused-but-se
                ^~~~~
 cc1.exe: all warnings being treated as errors
 a8ccbb1
+vi.,  2 de may. de 2025 18:41:22: 
+ treemap.c | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:0:
+treemap.c: In function 'insertTreeMap':
+treemap.c:65:12: error: too few arguments to function 'is_equal'
+         if(is_equal(key, actual->pair->key))
+            ^~~~~~~~
+In file included from test.c:4:0:
+treemap.c:22:5: note: declared here
+ int is_equal(TreeMap* tree, void* key1, void* key2){
+     ^~~~~~~~
+d86cdd4
