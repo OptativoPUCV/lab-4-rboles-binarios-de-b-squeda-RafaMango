@@ -62,7 +62,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value)
     while(actual != NULL)
     {
         padre = actual;
-        if(is_equal(key, actual->pair->key))
+        if(is_equal(actual->pair->key, key))
         {
             return; //ya existe
         }

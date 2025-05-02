@@ -57,3 +57,17 @@ treemap.c:22:5: note: declared here
  int is_equal(TreeMap* tree, void* key1, void* key2){
      ^~~~~~~~
 d86cdd4
+vi.,  2 de may. de 2025 18:42:52: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:0:
+treemap.c: In function 'insertTreeMap':
+treemap.c:65:12: error: too few arguments to function 'is_equal'
+         if(is_equal(actual->pair->key, key))
+            ^~~~~~~~
+In file included from test.c:4:0:
+treemap.c:22:5: note: declared here
+ int is_equal(TreeMap* tree, void* key1, void* key2){
+     ^~~~~~~~
+74655f0
