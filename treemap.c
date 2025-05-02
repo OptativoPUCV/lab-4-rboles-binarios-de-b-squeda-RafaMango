@@ -57,7 +57,26 @@ Luego crear el nuevo nodo y enlazarlo. Si la clave del dato ya existe retorne si
 */
 void insertTreeMap(TreeMap * tree, void* key, void * value)
 {
-    //TreeNode* 
+    TreeNode* actual = tree->root;
+    TreeNode* padre = NULL;
+    while(actual != NULL)
+    {
+        padre = actual;
+        if(is_equal(key, actual->pair->key))
+        {
+            return; //ya existe
+        }
+        else if(tree->lower_than(key, actual->pair->key))
+        {
+            actual = actual->left;
+        }
+        else
+        {
+            actual = actual->right;
+        }
+        
+
+    }
 }
 
 TreeNode * minimum(TreeNode * x)
