@@ -156,7 +156,9 @@ void removeNode(TreeMap * tree, TreeNode* node)
         return;
     }
     //caso 3
-    
+    TreeNode* minNode = minimum(node->right);
+    node->pair = minNode->pair;
+    removeNode(tree, minNode);
 
 }
 
