@@ -233,11 +233,9 @@ Pair * upperBound(TreeMap * tree, void* key)
         }
     }
     
-    if(ubNode != NULL)
-    {
-        tree->current = ubNode;
-        return ubNode->pair;
-    }
+    if(ubNode == NULL) return NULL;
+    tree->current = ubNode;
+    return ubNode->pair;
 }
 /*
 Implemente las funciones para recorrer la estructura: Pair* firstTreeMap(TreeMap* tree) retorna el primer Pair del mapa (el menor). 
