@@ -209,8 +209,36 @@ vaya guardando el nodo con la menor clave mayor o igual a key. Finalmente retorn
 
 Pair * upperBound(TreeMap * tree, void* key)
 {
+    TreeNode * current = tree->root;
+    TreeNode * ubNode = NULL;
     //TreeNode* node = tree->root;
     //TreeNode* ubNode
+
+    while(current != NULL)
+    {
+        if(is_equal(tree, key, current->pair->key))
+        {
+            tree->current = current;
+            return current->pair;
+        }
+        else if(tree->lower_than(key, current->pair->key))
+        {
+            ubNode = current;
+            current =  current->left;
+
+        }
+        else
+        {
+            current = current->right;
+        }
+    }
+    /*
+    if(ubNode != NULL)
+    {
+        tree->current = ubNode;
+        return ubNode->pair;
+    }
+    */
     return NULL;
 }
 /*
