@@ -112,3 +112,9 @@ treemap.c:231:5: error: suggest parentheses around assignment used as truth valu
      ^~
 cc1.exe: all warnings being treated as errors
 f5492c1
+do.,  4 de may. de 2025 21:01:25: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  25|1
+total_score: 60/70
+711768e
