@@ -140,3 +140,9 @@ treemap.c:213:16: error: variable 'ubNode' set but not used [-Werror=unused-but-
                 ^~~~~~
 cc1.exe: all warnings being treated as errors
 deb0c51
+do.,  4 de may. de 2025 21:38:09: 
+ treemap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+ tests:  25|1
+total_score: 60/70
+bd4ac76
