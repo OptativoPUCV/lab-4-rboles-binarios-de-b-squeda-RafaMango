@@ -57,22 +57,22 @@ Luego crear el nuevo nodo y enlazarlo. Si la clave del dato ya existe retorne si
 */
 void insertTreeMap(TreeMap * tree, void* key, void * value)
 {
-    TreeNode* actual = tree->root;
+    TreeNode* node = tree->root; //actual
     TreeNode* padre = NULL;
-    while(actual != NULL)
+    while(node != NULL)
     {
-        padre = actual;
-        if(is_equal(tree, key, actual->pair->key))
+        padre = node; //actual
+        if(is_equal(tree, key, node->pair->key))
         {
             return; //ya existe
         }
-        else if(tree->lower_than(key, actual->pair->key))
+        else if(tree->lower_than(key, node->pair->key))
         {
-            actual = actual->left;
+            node = node->left;
         }
         else
         {
-            actual = actual->right;
+            node = node->right;
         }
     }
     TreeNode* newNode = createTreeNode(key, value);
@@ -180,21 +180,21 @@ Implemente la función Pair* searchTreeMap(TreeMap* tree, void* key), la cual bu
 
 Pair * searchTreeMap(TreeMap * tree, void* key)
 {
-    TreeNode* aux = tree->root;
-    while(aux != NULL)
+    TreeNode* node = tree->root; //actual
+    while(node != NULL)
     {
-        if(tree->lower_than(key, aux->pair->key)) //is_equal
+        if(tree->lower_than(key, node->pair->key)) //is_equal
         {
-            aux = aux->left;
+            node = node->left;
         }
-        else if(tree->lower_than(aux->pair->key, key))
+        else if(tree->lower_than(node->pair->key, key))
         {
-            aux = aux->right;
+            node = node->right;
         }
         else
         {
-            tree->current = aux;
-            return aux->pair;
+            tree->current = node;
+            return node->pair;
         }
     }
 
@@ -209,27 +209,26 @@ vaya guardando el nodo con la menor clave mayor o igual a key. Finalmente retorn
 
 Pair * upperBound(TreeMap * tree, void* key)
 {
-    TreeNode * current = tree->root;
+    TreeNode * node = tree->root; //actual
     TreeNode * ubNode = NULL;
     //TreeNode* node = tree->root;
     //TreeNode* ubNode
 
-    while(current != NULL)
+    while(node != NULL)
     {
-        if(is_equal(tree, key, current->pair->key))
+        if(is_equal(tree, key, node->pair->key))
         {
-            tree->current = current;
-            return current->pair;
+            tree->current = node;
+            return node->pair;
         }
-        if(tree->lower_than(key, current->pair->key))
+        if(tree->lower_than(key, node->pair->key))
         {
-            ubNode = current;
-            current =  current->left;
-
+            ubNode = node;
+            node =  node->left;
         }
         else
         {
-            current = current->right;
+            node = node->right;
         }
     }
     
